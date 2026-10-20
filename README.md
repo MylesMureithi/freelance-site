@@ -2,7 +2,7 @@
 
 My personal freelance site for selling fixed-price web development packages. Clients can pick a package, see the price, delivery time and revision rounds, read how a project runs, see the ways to pay, and send a request, with no Fiverr account required.
 
-**Live site:** https://damper-freelance-web.vercel.app/
+**Live site:** https://damper-webdev.vercel.app/
 
 ## Features
 
