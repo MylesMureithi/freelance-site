@@ -176,9 +176,36 @@ h3 { font-size: 1.35rem; font-weight: 600; }
 .pay strong { font: 800 1.15rem var(--head); }
 .pay span { color: var(--muted); }
 
-details { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
-summary { cursor: pointer; font-weight: 600; }
-details p { margin: 0.6rem 0 0; color: var(--muted); }
+
+.faq-list { display: grid; gap: 0.75rem; }
+
+details {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+}
+details[open] { box-shadow: 4px 4px 0 var(--sun); }
+summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  padding: 1rem 3rem 1rem 1.1rem;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font: 800 1.4rem var(--head);
+  color: var(--cobalt);
+}
+details[open] summary::after { content: "\2212"; }
+details p { margin: 0; padding: 0 1.1rem 1.1rem; color: var(--muted); }
+
+.faq-note { margin: 1.25rem 0 0; color: var(--muted); }
 
 form { display: grid; gap: 1rem; }
 label { display: grid; gap: 0.35rem; font-weight: 600; }
