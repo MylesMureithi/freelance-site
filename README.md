@@ -1,16 +1,65 @@
-# React + Vite
+# Freelance Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal freelance site for selling fixed-price web development packages. Clients can pick a package, see the price, delivery time and revision rounds, read how a project runs, see the ways to pay, and send a request, with no Fiverr account required.
 
-Currently, two official plugins are available:
+**Live site:** https://damper-freelance-web.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Package picker with live price, 50% deposit, delivery time and revision rounds, plus a "Something else" option for custom quotes
+- Recent work cards with screenshots and links
+- "How a project runs" section covering the full process from brief to launch
+- Ways to pay: card and mobile money (Paystack payment links), PayPal, and bank transfer
+- FAQ covering payment, ownership, revisions and what's not included
+- Contact form (Formspree) that is pre-filled with the chosen package
+- Responsive layout with a mobile menu
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- React 18
+- Vite
+- Plain CSS with custom properties
+- Formspree (contact form)
+- Vercel (hosting)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project structure
+
+```
+src/
+  components/   Header, Hero, PackagePicker, Work, Steps,
+                Payments, Faq, ContactForm, Footer
+  data/site.js  All editable content
+  assets/       Project screenshots
+  App.jsx       Assembles the page
+  index.css     All styles
+public/         Favicon files
+```
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Other commands:
+
+```bash
+npm run build     # production build into dist/
+npm run preview   # preview the production build
+```
+
+## Editing the content
+
+Nearly everything on the site lives in `src/data/site.js`:
+
+- `SITE`: contact details and the Formspree endpoint
+- `PACKAGES`: names, prices, delivery times and revision rounds
+- `WORK`: portfolio projects
+- `STEPS`, `PAYMENTS`, `FAQ`: the matching sections
+
+To use the contact form, create a form at [formspree.io](https://formspree.io) and paste its endpoint into `SITE.formspree`.
+
+## Deployment
+
+The site deploys to Vercel automatically on every push to `main`.
